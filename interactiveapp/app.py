@@ -155,8 +155,8 @@ def update_graph(YearVal, ViewOpts):
 
         complete_edgelist = list(H.edges())
         
-
-        tree = nx.dfs_tree(H, 'Origin')
+        print(complete_edgelist)
+        tree = nx.bfs_tree(H, 'Origin')
         pos = hierarchy_pos(tree, "Origin")
         H = tree
 
@@ -206,7 +206,7 @@ def update_graph(YearVal, ViewOpts):
         else:
             selected_edges = tree_edgelist
 
-
+        
 
         for edge in selected_edges:
             start = H.nodes[edge[0]]['pos']
